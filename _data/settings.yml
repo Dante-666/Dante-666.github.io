@@ -11,10 +11,10 @@ address: C/O Jagpal Singh, Near E.S.I Office, 4th Cross Road, Junglighat, Port B
 copyright: Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
 
 menu:
-- {name: About, link: '/about'}
-- {name: Blog, link: '/blog'}
-- {name: Portfolio, link: '/portfolio'}
-- {name: Contact, link: '/contact'}
+- {name: About, link: '#about'}
+- {name: Blog, link: '#blog'}
+- {name: Portfolio, link: '#portfolio'}
+- {name: Contact, link: '#contact'}
 
 
 #-------------------------------

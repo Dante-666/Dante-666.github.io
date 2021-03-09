@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   background-color: $body-color;
   overflow-x: hidden;
@@ -73,6 +77,10 @@ a:hover {
     margin-bottom: 80px;
     font-family: $tertiary-font;
   }
+}
+
+.section-scroll {
+    scroll-margin-top: 150px;
 }
 
 .bg-cover {
