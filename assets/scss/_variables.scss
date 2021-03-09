@@ -1,17 +1,21 @@
 // Color Variables
 $primary-color: #41228e;
 $secondary-color: #2bfdff;
-$text-color: #4c4c4c;
-$text-color-dark: #000;
+$github-text-dark: #c9d1d9;
+$github-text: #8b949e;
+$text-color: $github-text;
+$text-color-dark: $github-text-dark;
 $text-color-light: #999;
-$body-color: #fff;
+$github-black: #0d1117;
+$body-color: $github-black;
 $border-color: #c7c7c7;
 $black: #000;
 $white: #fff;
 $gray: #eaeaea;
+$github-card-color: #21262d;
 
 // Font Variables
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Playfair Display', serif;
+$primary-font: 'Roboto Slab', sans-serif;
+$secondary-font: 'Playfair Display', sans-serif, bold;
 $tertiary-font: 'BwNistaInt-xBd';
 $icon-font: 'themify';
