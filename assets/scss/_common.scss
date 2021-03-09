@@ -9,7 +9,7 @@ body {
 
 ::selection {
   background: lighten($color: $primary-color, $amount: 10);
-  color: $white;
+  color: $gray;
 }
 
 /* preloader */
@@ -262,6 +262,11 @@ a:hover {
     outline: 0;
     box-shadow: none !important;
   }
+  background-color: $github-card-color;
+  background: $github-card-color;
+}
+.form-bound{
+    background-color: $github-card-color 
 }
 
 textarea.form-control{
@@ -278,5 +283,6 @@ textarea.form-control{
   &-footer{
     border: 0;
   }
+  background-color: $github-card-color
 }
 /* /card */

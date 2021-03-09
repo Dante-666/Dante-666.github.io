@@ -10,7 +10,9 @@ phone: +91 9000968078
 address: C/O Jagpal Singh, Near E.S.I Office, 4th Cross Road, Junglighat, Port Blair-744103, India
 copyright: Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
 
+navtop: '#parallax'
 menu:
+- {name: Home, link: '#parallax'}
 - {name: About, link: '#about'}
 - {name: Blog, link: '#blog'}
 - {name: Portfolio, link: '#portfolio'}
@@ -52,13 +54,7 @@ social:
 
 # About Section
 blurb:
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-blurb-btn-link: '/about'
-blurb-btn-name: know more
-
-
-# About Page
+  I am a passionate programmer who has been in the industry for about five years now. I left the industry briefly to pursue a Master's program. I took up pragmatic and diverse courses/projects like Image Processing, Deep Learning, Robotics, Computer Vision, Computational Photography, and Computer Graphics.<br><br> I am an individual contributor at present, but I have gained enough experience to take up more challenging and lead roles. I am an expert Linux user, and I have invested primarily in the C++ programming language because of the domains it is applied in. Game Development is one such domain, and it has always intrigued me since childhood. I've done some independent work to prove my motivation, and I am currently looking for a job in the Game Development industry. I think my skillsets and interests align with the industry, and this is where I want to be.
 
 # Work Process Section
 work-process:
@@ -106,9 +102,8 @@ skills:
 
 experience-title: Experience
 experience:
-- {name: Junior UX Designer, icon: 'icon-1.png', date: 'Jan 2007 - Feb 2009', organization: 'WEBEX'}
-- {name: UX & UI Designer, icon: 'icon-2.png', date: 'Mar 2009 - Aug 2014', organization: 'AUGMEDIX'}
-- {name: Senior UI Designer, icon: 'icon-3.png', date: 'Sep 2014 - Present', organization: 'THEMEFISHER'}
+- {name: Software Engineer, icon: 'icon-2.png', date: 'July 2012 - Oct 2015', organization: 'CA Technologies'}
+- {name: Software Engineer, icon: 'icon-3.png', date: 'July 2019 - Present', organization: 'Mathworks'}
 
 
 #-------------------------------
@@ -116,11 +111,10 @@ experience:
 
 education-title: Education
 education:
-- {name: Marters in UX Design, date: '2006', organization: 'Masassusets Institute of Technology'}
-- {name: Honours in Fine Arts, date: '2004', organization: 'Harvard University'}
-- {name: Higher Secondary Certificat, date: '2000', organization: 'Cardiff School'}
-- {name: Secondary School Certificate, date: '1998', organization: 'Cardiff School'}
-
+- {name: Master of Science(By Research), date: 'July 2016 - June 2019', organization: 'Indian Institute of Technology, Kanpur'}
+- {name: Bachelor of Technology, date: 'July 2008- June 2012', organization: 'National Institute of Technology, Warangal'}
+- {name: Senior School Certificate, date: '2008', organization: 'Govt. Model Sr. Sec. School, Port Blair'}
+- {name: Secondary School Certificate, date: '2006', organization: 'K.V. 1, Port Blair'}
 
 #-------------------------------
 # Services Section
@@ -292,5 +286,5 @@ client-slider-items:
 #-------------------------------
 # Contact Section
 
-contact-title: Contact Info
+contact-title: Contact Me
 formspree-endpoint: f/xeqpyeoa
