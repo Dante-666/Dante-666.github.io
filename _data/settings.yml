@@ -10,9 +10,8 @@ phone: +91 9000968078
 address: C/O Jagpal Singh, Near E.S.I Office, 4th Cross Road, Junglighat, Port Blair-744103, India
 copyright: Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
 
-navtop: '#parallax'
 menu:
-- {name: Home, link: '#parallax'}
+- {name: Home, link: '#'}
 - {name: About, link: '#about'}
 - {name: Blog, link: '#blog'}
 - {name: Portfolio, link: '#portfolio'}
@@ -40,7 +39,7 @@ disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
 # Hero Section
 
 hero:
-  hero-title: Hi! I’m <br> Siddharth J Singh <br> C++ Developer
+  hero-title: Hi! I’m <br> Siddharth J Singh <br> C++ Developer <br> !!Site under construction!!
 
 social:
 - {icon: "ti-facebook", link: "#"}
@@ -147,21 +146,12 @@ services:
 
 # Portfolio Home Section
 portfolio-home-items:
-  - image : "assets/images/portfolio/item-1.png"
-    url: "#"
+  - image : "assets/images/portfolio/true-dice.png"
+    url: "/true-dice"
     
-  - image : "assets/images/portfolio/item-2.png"
-    url: "#"
+  - image : "assets/images/portfolio/bullet-physics.png"
+    url: "/bullet-physics"
     
-  - image : "assets/images/portfolio/item-3.png"
-    url: "#"
-    
-  - image : "assets/images/portfolio/item-4.png"
-    url: "#"
-    
-  - image : "assets/images/portfolio/item-5.png"
-    url: "#"
-
 
 # Portfolio Page
 portfolio-label:

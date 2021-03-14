@@ -79,6 +79,15 @@ a:hover {
   }
 }
 
+.subsection {
+  padding-top: 2rem;
+
+  &-title {
+    margin-bottom: 80px;
+    font-family: $tertiary-font;
+  }
+}
+
 .section-scroll {
     scroll-margin-top: 5rem;
 }
@@ -284,5 +293,12 @@ textarea.form-control{
     border: 0;
   }
   background-color: $github-card-color
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 /* /card */
