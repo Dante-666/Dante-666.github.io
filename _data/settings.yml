@@ -53,7 +53,7 @@ social:
 
 # About Section
 blurb:
-  I am a passionate programmer who has been in the industry for about five years now. I left the industry briefly to pursue a Master's program. I took up pragmatic and diverse courses/projects like Image Processing, Deep Learning, Robotics, Computer Vision, Computational Photography, and Computer Graphics.<br><br> I am an individual contributor at present, but I have gained enough experience to take up more challenging and lead roles. I am an expert Linux user, and I have invested primarily in the C++ programming language because of the domains it is applied in. Game Development is one such domain, and it has always intrigued me since childhood. I've done some independent work to prove my motivation, and I am currently looking for a job in the Game Development industry. I think my skillsets and interests align with the industry, and this is where I want to be.
+  I am a passionate programmer who has been in the industry for about five years now. I left the industry briefly to pursue a Master's program. I took up pragmatic and diverse courses/projects like Image Processing, Deep Learning, Robotics, Computer Vision, Computational Photography, and Computer Graphics.<br><br> I am an individual contributor at present, but I am looking for more challenging and mentoring roles as the next step in my career. I am an expert Linux user, and I have invested primarily in the C++ programming language because of the domains it is applied in. Game Development is one such domain, and it has always intrigued me since childhood. I've done some independent work to prove my motivation, and I am currently looking for a job in the Game Development industry. I think my skillsets and interests align with the industry, and this is where I want to be.
 
 # Work Process Section
 work-process:
@@ -146,13 +146,12 @@ services:
 
 # Portfolio Home Section
 portfolio-home-items:
+  - image : "assets/images/portfolio/bullet-physics.png"
+    url: "/bullet-physics"
+
   - image : "assets/images/portfolio/true-dice.png"
     url: "/true-dice"
     
-  - image : "assets/images/portfolio/bullet-physics.png"
-    url: "/bullet-physics"
-    
-
 # Portfolio Page
 portfolio-label:
 - {
