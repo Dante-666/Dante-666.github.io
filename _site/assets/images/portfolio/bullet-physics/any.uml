@@ -1,0 +1,58 @@
+@startuml
+skinparam backgroundcolor transparent
+
+class PropertyChain {
+    PropertyChain *next = nullptr
+    --
+    friend class Iterator<PropertyChain>
+    void addProperty(PropertyChain *n)
+}
+
+class AShape {
+    shared_ptr<Shape> m_shape
+    GuiDropDownList *m_shapeDropDownList
+    String m_anySpec
+    --
+    explicit AShape(const Any &)
+    AShape &operator=(const Any &)
+    Any toAny() const
+}
+
+class Solid {
+    float m_rollingFriction = 0.3
+    bool m_phased = false
+    --
+    explicit Solid(const Any &any)
+    Solid &operator=(const Any &a)
+    Any toAny() const;
+}
+PropertyChain <|-- AShape
+PropertyChain <|-- Solid
+
+class GhostEntity {
+    void init(AnyTableReader &propertyTable)
+    ..
+    AShape ashape
+    if (propertyTable.getIfPresent("ashape", ashape))
+    \tthis->addProperty(new AShape(ashape))
+    --
+    virtual Any toAny(const bool forceAll)
+}
+
+class PhysicsEntity {
+    void init(AnyTableReader &propertyTable)
+    ..
+    AShape ashape
+    if (propertyTable.getIfPresent("ashape", ashape))
+    \tthis->addProperty(new AShape(ashape))
+    Solid solid
+    if (propertyTable.getIfPresent("solid", solid))
+    \tthis->addProperty(new Solid(solid))
+    --
+    virtual Any toAny(const bool forceAll)
+}
+
+PropertyChain <|-- GhostEntity
+PropertyChain <|-- PhysicsEntity
+
+@enduml

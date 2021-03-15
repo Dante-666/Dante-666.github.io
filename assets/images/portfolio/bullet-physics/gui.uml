@@ -1,0 +1,41 @@
+@startuml
+skinparam backgroundcolor transparent
+
+class AShape {
+    -String m_anySpec
+    --
+    shapeSetterCallBack()
+    ..
+    auto any = Any::parse(m_anySpec)
+    assignShape(any)
+    --
+    virtual makeGUI(class GuiPane *pane, class GApp *app)
+    ..
+    auto any = toAny()
+    m_anySpec = any.unparse()
+    multiLineTextBox = pane->addMultiLineTextBox("Any Spec", &m_anySpec)
+    pane->addButton("Apply",
+    \tGuiControl::Callback(this, &AShape::shapeSetterCallBack),
+    \tGuiTheme::NORMAL_BUTTON_STYLE)
+}
+
+class PhysicsEntity {
+    virtual makeGUI(class GuiPane *pane, class GApp *app)
+    ..
+    VisibleEntity::makeGUI(pane, app)
+    auto tabPane = pane->addTabPane();
+    for (auto it : properties)
+    \tString property = it->getName()
+    \tauto childPane = tabPane->addTab(property)
+    \tit->makeGUI(childPane, app)
+}
+
+class Solid {
+    virtual makeGUI(GuiPane* pane, GApp* app)
+    ..
+    pane->addNumberBox<float>("rollingFriction", &m_rollingFriction)
+}
+
+
+
+@enduml

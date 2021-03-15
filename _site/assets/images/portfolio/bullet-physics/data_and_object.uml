@@ -28,13 +28,13 @@ class Frame {
 }
 
 class Matrix  {
-    {static} const btMatrix3x3 convert(const G3D::Matrix3&);
-    {static} const G3D::Matrix3 convert(const btMatrix3x3&);
+    {static} const btMatrix3x3 convert(const G3D::Matrix3&)
+    {static} const G3D::Matrix3 convert(const btMatrix3x3&)
 }
 
 class Vector {
-    {static} const btVector3 convert(const G3D::Vector3&);
-    {static} const G3D::Vector3 convert(const btVector3&);
+    {static} const btVector3 convert(const G3D::Vector3&)
+    {static} const G3D::Vector3 convert(const btVector3&)
 }
 
 CollisionFactory <|-- CollisionShapeFactory

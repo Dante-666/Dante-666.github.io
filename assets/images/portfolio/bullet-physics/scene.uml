@@ -29,14 +29,16 @@ VisibleEntity <|-- PhysicsEntity
 
 class Scene {
     Array<shared_ptr<Entity>> m_entityArray
+    --
     virtual onSimulation(SimTime deltaTime)
     ..
     for (entity : m_entityArray)
-        entity->onSimulation(m_time, deltaTime)
+    \tentity->onSimulation(m_time, deltaTime)
 }
 
 class PhysicsScene {
     PurePhysics* m_physics
+    --
     virtual onSimulation(SimTime deltaTime)
     ..
     m_physics->simulate(deltaTime)
@@ -49,11 +51,21 @@ class PurePhysics {
     {abstract} simulate(float deltaTime)
 }
 class BulletPhysics {
-    btDynamicsWorld *m_dynamicsWorld;
+    btDynamicsWorld *m_dynamicsWorld
+    boost::bimap<const G3D::Entity *, 
+                 btCollisionObject *> m_dynamicBodyMap
+    --
     insertEntity(const G3D::Entity *entity)
     removeEntity(const G3D::Entity *entity)
-    G3D::CoordinateFrame getFrame(const G3D::Entity *entity)
     simulate(float deltaTime)
+    ..
+    m_dynamicsWorld->stepSimulation(deltaTime)
+    --
+    G3D::CoordinateFrame 
+    getFrame(const G3D::Entity *entity)
+    ..
+    query m_dynamicBodyMap for object and get position
+    from physics engine
 }
 
 Scene <|-- PhysicsScene
