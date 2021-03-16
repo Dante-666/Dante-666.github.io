@@ -211,6 +211,10 @@ a:hover {
   box-shadow: 0px 18px 39.1px 6.9px rgba(224, 241, 255, 0.34) !important;
 }
 
+.dshadow {
+  filter: drop-shadow(0px 5px 15px rgba(224, 241, 255, 0.34));
+}
+
 .bg-dark{
   background-color: #222222 !important;
 }

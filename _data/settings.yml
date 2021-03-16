@@ -24,8 +24,6 @@ menu:
 # Analytics helps you understand who visits your website.
 # Learn more at: http://support.google.com/analytics/answer/1008065
 
-# NOTE: If you want to use Google Analytics for basic web tracking: Just uncomment and enter your UA-Code here.
-
 google-analytics: G-MM2F5FN4DZ
 
 
@@ -55,36 +53,6 @@ social:
 blurb:
   I am a passionate programmer who has been in the industry for about five years now. I left the industry briefly to pursue a Master's program. I took up pragmatic and diverse courses/projects like Image Processing, Deep Learning, Robotics, Computer Vision, Computational Photography, and Computer Graphics.<br><br> I am an individual contributor at present, but I am looking for more challenging and mentoring roles as the next step in my career. I am an expert Linux user, and I have invested primarily in the C++ programming language because of the domains it is applied in. Game Development is one such domain, and it has always intrigued me since childhood. I've done some independent work to prove my motivation, and I am currently looking for a job in the Game Development industry. I think my skillsets and interests align with the industry, and this is where I want to be.
 
-# Work Process Section
-work-process:
-  - title : "Research and Plan"
-    icon : "assets/images/icons/plan.png"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    
-  - title : "Design and Develop"
-    icon : "assets/images/icons/design.png"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    
-  - title : "Deliver"
-    icon : "assets/images/icons/print.png"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-
-# My Team Section
-team:
-  - title : "Jack Schenziwe"
-    image : "assets/images/team/member-1.png"
-    designation : "Project Manager"
-    
-  - title : "Julias Carlie"
-    image : "assets/images/team/member-2.png"
-    designation : "Web Developer"
-    
-  - title : "John Doe"
-    image : "assets/images/team/member-3.png"
-    designation : "Designer"
-
-
 #-------------------------------
 # Skills Section
 
@@ -96,50 +64,34 @@ skills:
 - {name: Web App, color: '#ffbcaa', value: '70%'}
 
 
-#-------------------------------
-# Exprerience Section
-
-experience-title: Experience
-experience:
-- {name: Software Engineer, icon: 'icon-2.png', date: 'July 2012 - Oct 2015', organization: 'CA Technologies'}
-- {name: Software Engineer, icon: 'icon-3.png', date: 'July 2019 - Present', organization: 'Mathworks'}
-
 
 #-------------------------------
-# Education Section
+# Timeline Section
 
-education-title: Education
-education:
-- {name: Master of Science(By Research), date: 'July 2016 - June 2019', organization: 'Indian Institute of Technology, Kanpur'}
-- {name: Bachelor of Technology, date: 'July 2008- June 2012', organization: 'National Institute of Technology, Warangal'}
-- {name: Senior School Certificate, date: '2008', organization: 'Govt. Model Sr. Sec. School, Port Blair'}
-- {name: Secondary School Certificate, date: '2006', organization: 'K.V. 1, Port Blair'}
-
-#-------------------------------
-# Services Section
-
-services-title: Services
-services:
-- {
-    name: UI Design,
-    icon: ti-palette,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    active: # Add true to select section
+timeline-title: Timeline
+timeline:
+- {name: Bachelor of Technology, 
+   date: 'July 2008- June 2012',
+   organization: 'National Institute of Technology, Warangal',
+   type: 'ed'
   }
-- {
-    name: UX Design,
-    icon: ti-vector,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    active: true # Add true to select section
+- {name: Software Engineer, 
+   icon: 'icon-2.png', 
+   date: 'July 2012 - Oct 2015', 
+   organization: 'CA Technologies',
+   type: 'work'
   }
-- {
-    name: Interaction Design,
-    icon: ti-panel,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    active: # Add true to select section
+- {name: Master of Science(By Research), 
+   date: 'July 2016 - June 2019', 
+   organization: 'Indian Institute of Technology, Kanpur',
+   type: 'ed'
   }
-
-
+- {name: Software Engineer, 
+   icon: 'icon-3.png', 
+   date: 'July 2019 - Present', 
+   organization: 'Mathworks',
+   type: 'work'
+  }
 
 #-------------------------------
 # Portfolio (Section and Page)
@@ -152,21 +104,6 @@ portfolio-home-items:
   - image : "assets/images/portfolio/true-dice.png"
     url: "/true-dice"
     
-# Portfolio Page
-portfolio-label:
-- {
-    title : "UI/UX Design",
-    type : "design"
-  }
-- {
-    title : "BRANDING",
-    type : "branding"
-  }
-- {
-    title : "ILLUSTRATION",
-    type : "illustration"
-  }
-
 portfolio-items:
   - image : "assets/images/portfolio/item-1.png"
     url: "#"
