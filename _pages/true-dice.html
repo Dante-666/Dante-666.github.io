@@ -2,24 +2,50 @@
 layout: portfolio
 title: VR App for Dice simulation
 section: Portfolio
+repo: Dante-666/TrueDice
 ---
 <!-- portfolio -->
 <section class="section">
   <div class="container">
-    <div class="row shuffle-wrapper">
-      {% for item in site.data.settings.portfolio-items %}
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{% for portfolio in item.portfolio-type %}{% if forloop.first == true %}{% else %},{% endif %}&quot;{{ portfolio.type }}&quot;{% endfor %}]">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="{{ site.baseurl }}/{{ item.image }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="{{ item.url }}">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+    <div class="col-lg-4 col-sm-6 mb-4" style="margin:auto">
+      <article class="card shadow">
+	<div class="card-body">
+	  {% for repository in site.github.public_repositories %}
+	    {% if repository.full_name == page.repo %}
+	    <h4 class="card-title">
+	      <a class="text-dark" href="{{ repository.html_url }}">{{repository.name}}</a>
+	    </h4>
+	    <p class="card-text">{{ repository.description }}</p>
+	  {% endif %}
+	  {% endfor %}
+	</div>
+      </article>
     </div>
+    <div class="row">
+      <section class="subsection">
+	<h3>Introduction</h3>
+	<p>
+	I played this classic Indian board game 
+	<a class="text-dark" href="https://en.wikipedia.org/wiki/Ludo_(board_game)">Ludo</a>
+	with my nephew and niece and complained about losing the die too often. This inspired me 
+	to create a virtual dice that the user can physically manipulate and it won't be based on 
+	some pseudorandom number generation but as close to true randomness that one can achieve. 
+	As research, I looked up some apps on Google Play Store and found none of them do what I 
+	wanted. Some implementations just applied an impulse force to the die/dice in the scene
+       	and they jumped and gave a number. Some others employed animation and pseudorandom 
+	number generation to show the particular face.</p>
+	<img src="assets/images/portfolio/truedice/ludo.png" alt="Ludo board game" 
+	class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem;">
+	<p>
+	These apps were not good enough and as I pondered more about the idea, I thought, why 
+	hasn't anyone done this yet? An Android phone has an accelerometer sensor with fusion 
+	algorithms that combines data from multiple sources to filter out the data. We can 
+	figure out the forces being applied to the mobile and use relativistic frames of 
+	reference to manipulate the die. We also have physics and collision detection, which 
+	can contain the die within an enclosed space. It's just a matter of putting everything 
+	together.
+	</p>
+      </section>
   </div>
 </section>
 <!-- /portfolio -->
