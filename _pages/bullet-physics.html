@@ -2,7 +2,7 @@
 layout: portfolio
 title: Integrating G3D renderer with bulletphysics
 section: Portfolio
-repository: Dante-666/bouncy-ball
+repo: Dante-666/bouncy-ball
 g3dbullet: nNDSYBviJiY
 attractor: de3vHrj_GLk
 ogrebullet: 5z51WMqBaiA
@@ -13,10 +13,14 @@ ogrebullet: 5z51WMqBaiA
     <div class="col-lg-4 col-sm-6 mb-4" style="margin:auto">
       <article class="card shadow">
 	<div class="card-body">
-	  <h4 class="card-title">
-	      <a class="text-dark" href="https://github.com/Dante-666/bouncy-ball">bouncy-ball</a>
-	  </h4>
-	  <p class="card-text">hello world game for g3d development and learning, use gh-metadata later</p>
+	  {% for repository in site.github.public_repositories %}
+	    {% if repository.full_name == page.repo %}
+	    <h4 class="card-title">
+	      <a class="text-dark" href="{{ repository.html_url }}">{{repository.name}}</a>
+	    </h4>
+	    <p class="card-text">{{ repository.description }}</p>
+	  {% endif %}
+	  {% endfor %}
 	</div>
       </article>
     </div>

@@ -6,6 +6,8 @@ markdown: kramdown
 permalink: pretty
 plugins:
   - jekyll-sitemap
+  - jekyll-plantuml
+  - jekyll-github-metadata
 compress_html:
   clippings: all
   comments: all
