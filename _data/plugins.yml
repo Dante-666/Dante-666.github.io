@@ -11,3 +11,5 @@ js:
   - "/assets/plugins/bootstrap/bootstrap.min.js"
   - "/assets/plugins/shuffle/shuffle.min.js"
   - "/assets/plugins/slick/slick.min.js"
+  - "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  - "//cdn.youracclaim.com/assets/utilities/embed.js"

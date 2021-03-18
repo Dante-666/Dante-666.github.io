@@ -34,8 +34,10 @@ ul {
 }
 
 img {
-  vertical-align: middle;
   border: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a,
@@ -303,6 +305,5 @@ textarea.form-control{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
 }
 /* /card */
