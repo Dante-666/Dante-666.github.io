@@ -63,7 +63,8 @@ repo: Dante-666/TrueDice
 	as well, which is more like Unity and has a graphical 
 	interface and script-based development system. But I don't particularly appreciate 
 	using those and I'll illustrate why later.</p>
-	<h5>add a basic image of mobile + bounding box</h5>
+	<img src="assets/images/portfolio/truedice/mobile_dice_vr.png" alt="Mobile Dice VR" 
+	class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
 	<p>Let's imagine that you are holding a transparent cuboid, a bounding box that 
 	contains a die. If we shake the cuboid and introduce acceleration, the die will not 
 	experience any force until it hits the cuboid walls and then proceeds to bounce off 
@@ -106,7 +107,13 @@ repo: Dante-666/TrueDice
 	      rounds the corners. I edited the mesh further and beveled the edges to make it look 
 	      even more natural. Since the mesh became more complicated, I used the Smart UV Unwrap 
 	      to generate a guide for texture mapping and used Inkscape to add white dots and 
-	      transparency. Why we add transparency would become apparent when we discuss shaders.
+	      transparency.
+	      </p>
+	      <img src="assets/images/portfolio/truedice/blender_dice2.png" alt="Blender" 
+	      class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
+	      <p> The transparency is used to apply a color to the object via a GLSL uniform vec3.
+	      This was the best way to add custom colors and now users can add a new die with a
+	      color of their choice.
 	      </p>
 	    </section>
 	  </li>
@@ -133,11 +140,13 @@ repo: Dante-666/TrueDice
 	    <section>
 	      <h5>Walls</h5>
 		<p>This object was the simplest to manufacture as this only needs 8 points and 
-		six quads to generate. I built the first iteration by using corners of a cuboid, 
+		six quads to generate. I built the first iteration by using corners of a cuboid(red box), 
 		which did a great job of containing the die object. However, it looked pretty 
 		weird because of perspective projection which makes parallel lines non-parallel. 
 		The die behavior was extremely unnatural around the edges and it looked strange.
 		</p>
+		<img src="assets/images/portfolio/truedice/cam_frustum.png" alt="Camera Frustum" 
+		class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
 		<p>
 		I solved this problem using the camera
 		<a class="text-dark"
@@ -145,8 +154,8 @@ repo: Dante-666/TrueDice
 		to give me the exact boundaries and a more natural look and feel. The frustum is a 
 		collection of 6 planes where we can abandon the near and far planes and use
 		<a class="text-dark" href="http://www.songho.ca/math/index.html">plane-plane intersection</a>
-		equations to figure out four extreme rays which project out of the camera. Then we 
-		put two more planes right in front of the camera depending on the size of the 
+		equations to figure out four extreme rays which project out of the camera(yellow lines). Then we 
+		put two more planes(green squares) right in front of the camera depending on the size of the 
 		containment needed and intersect these four rays with these two planes at 8 points 
 		to get the corners and use the corners to create six quads of containment.
 		</p>
@@ -166,9 +175,15 @@ repo: Dante-666/TrueDice
 	      with the floor texture and it takes lesser space and I picked all the colors for the
 	      icons based on this background texture.
 	      </p>
-	      <p> When the menu dropped, it looked very flat and boring, so I edited the texture to
-	      have a burnt type of effect and made it repeat and this looks much better now.
+	      <img src="assets/images/portfolio/truedice/bg_flat.png" alt="Flat Background" 
+	      class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
+	      <p> When the menu dropped, it looked very flat and boring as shown above, so I 
+	      added a new quad with another texture on top of it and added a known color to 
+	      add transparency for the top layer with a shader. I also had to limit the 
+	      repetations of the top layer texture.
 	      </p>
+	      <img src="assets/images/portfolio/truedice/bg_burnt.png" alt="Flat Background" 
+	      class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
 	  </li>
 	  <li>
 	    <section>
@@ -271,13 +286,36 @@ repo: Dante-666/TrueDice
 	This provides finer control over the type of collisions and we can even use this to create different effects, like sounds
 	for say dynamic-dynamic collision types.
 	</p>
+	<h4>Particle FX</h4>
+	<p> This engine uses a Particle Universe plugin for 3D particle effects. The game samples had enough of these
+	as a starting point. I already had explosions and lightning in mind and luckily enough, there were effects for these.
+	The effects are stored in a text file and it is parsed to create an AST. Reading everything and trying to
+	understand was going to get me nowhere with this. So, I tweaked some parameters until it made sense and doing it
+	one at a time was incredibly helpful. I was able to convert the original explosion effect which had directional 
+	gravity to a radial direction. For the lightning, there was some smoke effect which I didn't need. I just had to
+	reduce the total amount of particle effects that can be attached to one node as having too many dice in the scene
+	just slowed everything down and saturated the screen with lights.
+	</p>
       </section>
     </div>
     <div class="row">
       <section>
 	<h3>Finishing Touches</h3>
-	<p>
+	<p> To complete the game, I had to polish it a bit more by adding a couple of cosmetic changes. I also wanted
+	it to look more professional and the only thing missing from this is a Load Screen. Since I am using open-source
+	software, I can come up with my own logo here. I've thought to name my one-man "company" Blood Eagle Studios as
+	I watched Vikings recently and I am still a bit high on that.
 	</p>
+	<img src="assets/images/portfolio/truedice/be_studios_logo.png" alt="Blood Eagle Studios" 
+	class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
+	<p> Found a creepy intro sound that goes really well with this. To make this work, I created a new scene and
+	pushed it on top of the original game scene. In Cocos2dx, the Director class suspends the previous scene and
+	runs this one and I've created some action sequence in which the Sprite is faded-in, faded-out and then a callback
+	to pop the current scene is called which runs the original game scene.</p>
+	<h4>Valgrind</h4>
+	<p>Check for leaks###############</p>
+	<h4>Gameplay</h4>
+	<p>ADDVIDEO</p>
       </section>
     </div>
     <div class="row">
