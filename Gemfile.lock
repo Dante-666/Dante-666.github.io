@@ -36,6 +36,8 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 2.0)
+    jekyll-gist (1.5.0)
+      octokit (~> 4.2)
     jekyll-github-metadata (2.13.0)
       jekyll (>= 3.4, < 5.0)
       octokit (~> 4.0, != 4.4.0)
@@ -89,6 +91,7 @@ PLATFORMS
 DEPENDENCIES
   bundler
   jekyll
+  jekyll-gist
   jekyll-github-metadata
   jekyll-plantuml
   jekyll-sitemap

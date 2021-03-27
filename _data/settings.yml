@@ -91,70 +91,32 @@ timeline:
    type: 'work'
   }
 
+
+#-------------------------------
+# Blog (Section and Page)
+
+# Blog Home Section
+blog-home-items:
+  - image : "assets/images/portfolio/bullet-physics.png"
+    url: "/blog/non_intrusive_visitor"
+
+  - image : "assets/images/portfolio/true-dice.png"
+    url: "/blog/non_intrusive_visitor"
+
 #-------------------------------
 # Portfolio (Section and Page)
 
 # Portfolio Home Section
 portfolio-home-items:
   - image : "assets/images/portfolio/bullet-physics.png"
-    url: "/bullet-physics"
+    url: "/pf/bullet-physics"
 
   - image : "assets/images/portfolio/true-dice.png"
-    url: "/true-dice"
+    url: "/pf/true-dice"
     
-portfolio-items:
-  - image : "assets/images/portfolio/item-1.png"
-    url: "#"
-    portfolio-type:
-     - type: "design"
-     - type: "illustration"
-      
-  - image : "assets/images/portfolio/item-2.png"
-    url: "#"
-    portfolio-type:
-      - type: "branding"
-      
-  - image : "assets/images/portfolio/item-3.png"
-    url: "#"
-    portfolio-type:
-      - type: "illustration"
-      
-  - image : "assets/images/portfolio/item-6.png"
-    url: "#"
-    portfolio-type:
-      - type: "design"
-      - type: "branding"
-      
-  - image : "assets/images/portfolio/item-8.png"
-    url: "#"
-    portfolio-type:
-      - type: "illustration"
-      
-  - image : "assets/images/portfolio/item-5.png"
-    url: "#"
-    portfolio-type:
-      - type: "design"
-      
-  - image : "assets/images/portfolio/item-1.png"
-    url: "#"
-    portfolio-type:
-      - type: "branding"
-      
-  - image : "assets/images/portfolio/item-3.png"
-    url: "#"
-    portfolio-type:
-      - type: "design"
-      - type: "illustration"
-      - type: "branding"
-      
-  - image : "assets/images/portfolio/item-7.png"
-    url: "#"
-    portfolio-type:
-      - type: "illustration"
-
-
 #-------------------------------
 # Testimonials Section
+# TODO: Ask collegues to give this information and add
 
 testimonial-items:
   - name: "Jesica Gomez"

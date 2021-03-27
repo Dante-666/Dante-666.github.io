@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="325px" preserveAspectRatio="none" style="width:1158px;height:325px;" version="1.1" viewBox="0 0 1158 325" width="1158px" zoomAndPan="magnify"><defs><filter height="300%" id="fnmc691ap3iys" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[f4f57b78d426173591eacef3f72769aa]
+class PropertyChain--><rect codeLine="2" fill="#FEFECE" filter="url(#fnmc691ap3iys)" height="86.4141" id="PropertyChain" style="stroke:#A80036;stroke-width:1.5;" width="223" x="418" y="7"/><ellipse cx="481.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M484.2188,28.6406 Q483.6406,28.9375 483,29.0781 Q482.3594,29.2344 481.6563,29.2344 Q479.1563,29.2344 477.8281,27.5938 Q476.5156,25.9375 476.5156,22.8125 Q476.5156,19.6875 477.8281,18.0313 Q479.1563,16.375 481.6563,16.375 Q482.3594,16.375 483,16.5313 Q483.6563,16.6875 484.2188,16.9844 L484.2188,19.7031 Q483.5938,19.125 483,18.8594 Q482.4063,18.5781 481.7813,18.5781 Q480.4375,18.5781 479.75,19.6563 Q479.0625,20.7188 479.0625,22.8125 Q479.0625,24.9063 479.75,25.9844 Q480.4375,27.0469 481.7813,27.0469 Q482.4063,27.0469 483,26.7813 Q483.5938,26.5 484.2188,25.9219 L484.2188,28.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="501.75" y="27.1543">PropertyChain</text><line style="stroke:#A80036;stroke-width:1.5;" x1="419" x2="640" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="167" x="424" y="53.2104">PropertyChain *next = nullptr</text><line style="stroke:#A80036;stroke-width:1.0;" x1="419" x2="640" y1="59.8047" y2="59.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="211" x="424" y="74.0151">friend class Iterator&lt;PropertyChain&gt;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="201" x="424" y="86.8198">void addProperty(PropertyChain *n)</text><!--MD5=[d23eb5847064fdb27a5121058e9a821d]
+class AShape--><rect codeLine="9" fill="#FEFECE" filter="url(#fnmc691ap3iys)" height="124.8281" id="AShape" style="stroke:#A80036;stroke-width:1.5;" width="249" x="7" y="169.5"/><ellipse cx="103.25" cy="185.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M106.2188,191.1406 Q105.6406,191.4375 105,191.5781 Q104.3594,191.7344 103.6563,191.7344 Q101.1563,191.7344 99.8281,190.0938 Q98.5156,188.4375 98.5156,185.3125 Q98.5156,182.1875 99.8281,180.5313 Q101.1563,178.875 103.6563,178.875 Q104.3594,178.875 105,179.0313 Q105.6563,179.1875 106.2188,179.4844 L106.2188,182.2031 Q105.5938,181.625 105,181.3594 Q104.4063,181.0781 103.7813,181.0781 Q102.4375,181.0781 101.75,182.1563 Q101.0625,183.2188 101.0625,185.3125 Q101.0625,187.4063 101.75,188.4844 Q102.4375,189.5469 103.7813,189.5469 Q104.4063,189.5469 105,189.2813 Q105.5938,189 106.2188,188.4219 L106.2188,191.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="123.75" y="189.6543">AShape</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="255" y1="201.5" y2="201.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="172" x="13" y="215.7104">shared_ptr&lt;Shape&gt; m_shape</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="237" x="13" y="228.5151">GuiDropDownList *m_shapeDropDownList</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="103" x="13" y="241.3198">String m_anySpec</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="255" y1="247.9141" y2="247.9141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="163" x="13" y="262.1245">explicit AShape(const Any &amp;)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="13" y="274.9292">AShape &amp;operator=(const Any &amp;)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="13" y="287.7339">Any toAny() const</text><!--MD5=[9875a7fb4ff870b6e2e25c61edc2e8e0]
+class Solid--><rect codeLine="19" fill="#FEFECE" filter="url(#fnmc691ap3iys)" height="112.0234" id="Solid" style="stroke:#A80036;stroke-width:1.5;" width="196" x="291.5" y="176"/><ellipse cx="370.25" cy="192" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M373.2188,197.6406 Q372.6406,197.9375 372,198.0781 Q371.3594,198.2344 370.6563,198.2344 Q368.1563,198.2344 366.8281,196.5938 Q365.5156,194.9375 365.5156,191.8125 Q365.5156,188.6875 366.8281,187.0313 Q368.1563,185.375 370.6563,185.375 Q371.3594,185.375 372,185.5313 Q372.6563,185.6875 373.2188,185.9844 L373.2188,188.7031 Q372.5938,188.125 372,187.8594 Q371.4063,187.5781 370.7813,187.5781 Q369.4375,187.5781 368.75,188.6563 Q368.0625,189.7188 368.0625,191.8125 Q368.0625,193.9063 368.75,194.9844 Q369.4375,196.0469 370.7813,196.0469 Q371.4063,196.0469 372,195.7813 Q372.5938,195.5 373.2188,194.9219 L373.2188,197.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="30" x="390.75" y="196.1543">Solid</text><line style="stroke:#A80036;stroke-width:1.5;" x1="292.5" x2="486.5" y1="208" y2="208"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="157" x="297.5" y="222.2104">float m_rollingFriction = 0.3</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="297.5" y="235.0151">bool m_phased = false</text><line style="stroke:#A80036;stroke-width:1.0;" x1="292.5" x2="486.5" y1="241.6094" y2="241.6094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="168" x="297.5" y="255.8198">explicit Solid(const Any &amp;any)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="184" x="297.5" y="268.6245">Solid &amp;operator=(const Any &amp;a)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="297.5" y="281.4292">Any toAny() const;</text><!--MD5=[a7dbee07e052eb86863001789e78e586]
+class GhostEntity--><rect codeLine="30" fill="#FEFECE" filter="url(#fnmc691ap3iys)" height="120.0234" id="GhostEntity" style="stroke:#A80036;stroke-width:1.5;" width="293" x="523" y="172"/><ellipse cx="629.25" cy="188" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M632.2188,193.6406 Q631.6406,193.9375 631,194.0781 Q630.3594,194.2344 629.6563,194.2344 Q627.1563,194.2344 625.8281,192.5938 Q624.5156,190.9375 624.5156,187.8125 Q624.5156,184.6875 625.8281,183.0313 Q627.1563,181.375 629.6563,181.375 Q630.3594,181.375 631,181.5313 Q631.6563,181.6875 632.2188,181.9844 L632.2188,184.7031 Q631.5938,184.125 631,183.8594 Q630.4063,183.5781 629.7813,183.5781 Q628.4375,183.5781 627.75,184.6563 Q627.0625,185.7188 627.0625,187.8125 Q627.0625,189.9063 627.75,190.9844 Q628.4375,192.0469 629.7813,192.0469 Q630.4063,192.0469 631,191.7813 Q631.5938,191.5 632.2188,190.9219 L632.2188,193.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="649.75" y="192.1543">GhostEntity</text><line style="stroke:#A80036;stroke-width:1.5;" x1="524" x2="815" y1="204" y2="204"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="236" x="529" y="218.2104">void init(AnyTableReader &amp;propertyTable)</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="524" x2="815" y1="224.8047" y2="224.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="529" y="239.0151">AShape ashape</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="281" x="529" y="251.8198">if (propertyTable.getIfPresent("ashape", ashape))</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="231" x="561" y="264.6245">this-&gt;addProperty(new AShape(ashape))</text><line style="stroke:#A80036;stroke-width:1.0;" x1="524" x2="815" y1="271.2188" y2="271.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="207" x="529" y="285.4292">virtual Any toAny(const bool forceAll)</text><!--MD5=[3c0854818714436cf6dd8b71d32f6d78]
+class PhysicsEntity--><rect codeLine="40" fill="#FEFECE" filter="url(#fnmc691ap3iys)" height="158.4375" id="PhysicsEntity" style="stroke:#A80036;stroke-width:1.5;" width="293" x="851" y="153"/><ellipse cx="952.75" cy="169" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M955.7188,174.6406 Q955.1406,174.9375 954.5,175.0781 Q953.8594,175.2344 953.1563,175.2344 Q950.6563,175.2344 949.3281,173.5938 Q948.0156,171.9375 948.0156,168.8125 Q948.0156,165.6875 949.3281,164.0313 Q950.6563,162.375 953.1563,162.375 Q953.8594,162.375 954.5,162.5313 Q955.1563,162.6875 955.7188,162.9844 L955.7188,165.7031 Q955.0938,165.125 954.5,164.8594 Q953.9063,164.5781 953.2813,164.5781 Q951.9375,164.5781 951.25,165.6563 Q950.5625,166.7188 950.5625,168.8125 Q950.5625,170.9063 951.25,171.9844 Q951.9375,173.0469 953.2813,173.0469 Q953.9063,173.0469 954.5,172.7813 Q955.0938,172.5 955.7188,171.9219 L955.7188,174.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="81" x="973.25" y="173.1543">PhysicsEntity</text><line style="stroke:#A80036;stroke-width:1.5;" x1="852" x2="1143" y1="185" y2="185"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="236" x="857" y="199.2104">void init(AnyTableReader &amp;propertyTable)</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="852" x2="1143" y1="205.8047" y2="205.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="857" y="220.0151">AShape ashape</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="281" x="857" y="232.8198">if (propertyTable.getIfPresent("ashape", ashape))</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="231" x="889" y="245.6245">this-&gt;addProperty(new AShape(ashape))</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="857" y="258.4292">Solid solid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="251" x="857" y="271.2339">if (propertyTable.getIfPresent("solid", solid))</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="201" x="889" y="284.0386">this-&gt;addProperty(new Solid(solid))</text><line style="stroke:#A80036;stroke-width:1.0;" x1="852" x2="1143" y1="290.6328" y2="290.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="207" x="857" y="304.8433">virtual Any toAny(const bool forceAll)</text><!--MD5=[ce0bd7ab4b331a4d36f64ded9a0226d9]
+reverse link PropertyChain to AShape--><path codeLine="27" d="M399.27,99.3 C358.54,115.36 313.75,134.02 273.5,153 C262.69,158.1 251.55,163.66 240.5,169.38 " fill="none" id="PropertyChain-backto-AShape" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="396.79,92.76,417.97,92,401.89,105.8,396.79,92.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3dfe7092bb007d51367bc036d3aa8f19]
+reverse link PropertyChain to Solid--><path codeLine="28" d="M484.19,109.26 C467.58,130.61 448.86,154.68 432.47,175.76 " fill="none" id="PropertyChain-backto-Solid" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="478.87,104.69,496.68,93.2,489.92,113.29,478.87,104.69" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3f8bf3bac652cd2afc15b647dad76cba]
+reverse link PropertyChain to GhostEntity--><path codeLine="53" d="M574.62,109.01 C590.21,129.06 607.7,151.54 623.37,171.69 " fill="none" id="PropertyChain-backto-GhostEntity" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="569.08,113.29,562.32,93.2,580.13,104.69,569.08,113.29" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[81695a571ee633350ea16f8dd18e6dd7]
+reverse link PropertyChain to PhysicsEntity--><path codeLine="54" d="M660.27,91.06 C714.41,108.63 777.52,130.39 833.5,153 C839.2,155.3 844.98,157.71 850.81,160.18 " fill="none" id="PropertyChain-backto-PhysicsEntity" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="658.03,97.7,641.13,84.91,662.31,84.37,658.03,97.7" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[98c1e1048f10cfe971fb88c93be78157]
+@startuml
+
+class PropertyChain {
+    PropertyChain *next = nullptr
+    - -
+    friend class Iterator<PropertyChain>
+    void addProperty(PropertyChain *n)
+}
+
+class AShape {
+    shared_ptr<Shape> m_shape
+    GuiDropDownList *m_shapeDropDownList
+    String m_anySpec
+    - -
+    explicit AShape(const Any &)
+    AShape &operator=(const Any &)
+    Any toAny() const
+}
+
+class Solid {
+    float m_rollingFriction = 0.3
+    bool m_phased = false
+    - -
+    explicit Solid(const Any &any)
+    Solid &operator=(const Any &a)
+    Any toAny() const;
+}
+PropertyChain <|- - AShape
+PropertyChain <|- - Solid
+
+class GhostEntity {
+    void init(AnyTableReader &propertyTable)
+    ..
+    AShape ashape
+    if (propertyTable.getIfPresent("ashape", ashape))
+    \tthis->addProperty(new AShape(ashape))
+    - -
+    virtual Any toAny(const bool forceAll)
+}
+
+class PhysicsEntity {
+    void init(AnyTableReader &propertyTable)
+    ..
+    AShape ashape
+    if (propertyTable.getIfPresent("ashape", ashape))
+    \tthis->addProperty(new AShape(ashape))
+    Solid solid
+    if (propertyTable.getIfPresent("solid", solid))
+    \tthis->addProperty(new Solid(solid))
+    - -
+    virtual Any toAny(const bool forceAll)
+}
+
+PropertyChain <|- - GhostEntity
+PropertyChain <|- - PhysicsEntity
+      
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 15:55:05 IST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: ANSI_X3.4-1968
+Language: en
+Country: US
+--></g></svg>
