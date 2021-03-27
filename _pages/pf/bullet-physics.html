@@ -116,77 +116,7 @@ permalink : /pf/:basename
       a trigger object but not visible to the camera. In this design, I didn't modify the G3D source code, which 
       resulted in this scheme. Luckily, G3D is designed to allow many custom extensions and desired operations 
       and making it work was not too hard.</p>
-      {% plantuml %}
-class Entity {
-    virtual void onSimulation(SimTime deltaTime)
-}
-
-Entity <|-- MarkerEntity 
-
-Entity <|-- VisibleEntity
-
-class GhostEntity {
-    virtual void onSimulation(SimTime deltaTime)
-    ..
-    Implement trigger logic here and if object is
-    dynamic, we can update state as well
-}
-
-class PhysicsEntity {
-    virtual void onSimulation(SimTime deltaTime)
-    ..
-    Update the position/rotation of object here
-    Also, if Scene is in edit mode, we can disable
-    the physics counterpart here.
-}
-
-MarkerEntity <|-- GhostEntity
-VisibleEntity <|-- PhysicsEntity
-
-class Scene {
-    Array<shared_ptr<Entity>> m_entityArray
-    --
-    virtual onSimulation(SimTime deltaTime)
-    ..
-    for (entity : m_entityArray)
-    \tentity->onSimulation(m_time, deltaTime)
-}
-
-class PhysicsScene {
-    PurePhysics* m_physics
-    --
-    virtual onSimulation(SimTime deltaTime)
-    ..
-    m_physics->simulate(deltaTime)
-    Scene::onSimulation(deltaTime)
-}
-class PurePhysics {
-    {abstract} insertEntity(const G3D::Entity *entity)
-    {abstract} removeEntity(const G3D::Entity *entity)
-    {abstract} G3D::CoordinateFrame getFrame(const G3D::Entity *entity)
-    {abstract} simulate(float deltaTime)
-}
-class BulletPhysics {
-    btDynamicsWorld *m_dynamicsWorld
-    boost::bimap<const G3D::Entity *, 
-                 btCollisionObject *> m_dynamicBodyMap
-    --
-    insertEntity(const G3D::Entity *entity)
-    removeEntity(const G3D::Entity *entity)
-    simulate(float deltaTime)
-    ..
-    m_dynamicsWorld->stepSimulation(deltaTime)
-    --
-    G3D::CoordinateFrame 
-    getFrame(const G3D::Entity *entity)
-    ..
-    query m_dynamicBodyMap for object and get position
-    from physics engine
-}
-
-Scene <|-- PhysicsScene
-PurePhysics <|-- BulletPhysics
-      {% endplantuml %}
+      <object data="/uml/592396e0ac58a9e7c6710c7516e1fccf.svg" type="image/svg+xml" class="plantuml"></object> 
       <p>As for the engine, I didn't want to stick to just one, so I designed an interface that accepts G3D 
       objects and can be queried for position updates. In my design, the objects are responsible for fetching 
       the updates and this introduces some function calls and slight performance overhead. However, the overhead
@@ -199,52 +129,7 @@ PurePhysics <|-- BulletPhysics
       coordinate. Or we could think of a TimeTravelEntity, which stores their past 6DOF positions for a specific 
       time and can travel back in time based on some trigger.
       </p>
-      {% plantuml %}
-class CollisionFactory {
-    {static} EO *create(const GO *)
-}
-
-class CollisionShapeFactory {
-    {static} btCollisionShape *create(const G3D::AShape *)
-}
-
-class PhysicsBodyFactory {
-    {static} btRigidBody *create(const G3D::PhysicsEntity *)
-}
-
-class GhostObjectFactory {
-    {static} btGhostObject *create(const G3D::GhostEntity *)
-}
-
-class DataFactory {
-    {static} const inline ED convert(const GD&)
-    {static} const inline GD convert(const ED&)
-}
-
-class Frame {
-    {static} const btTransform convert(const G3D::CoordinateFrame&)
-    {static} const G3D::CoordinateFrame convert(const btTransform&)
-}
-
-class Matrix  {
-    {static} const btMatrix3x3 convert(const G3D::Matrix3&)
-    {static} const G3D::Matrix3 convert(const btMatrix3x3&)
-}
-
-class Vector {
-    {static} const btVector3 convert(const G3D::Vector3&)
-    {static} const G3D::Vector3 convert(const btVector3&)
-}
-CollisionFactory <|-- CollisionShapeFactory
-CollisionFactory <|-- PhysicsBodyFactory
-CollisionFactory <|-- GhostObjectFactory
-
-DataFactory <|-- Frame
-DataFactory <|-- Matrix
-DataFactory <|-- Vector
-
-Matrix -down[hidden]- CollisionFactory
-      {% endplantuml %}
+      <object data="/uml/2411ab6b3f2774ba93d193b10e06e925.svg" type="image/svg+xml" class="plantuml"></object>
       <p>
       For object construction, I came up with a generic method for GO(G3D Object) to EO(physics Engine Object) 
       and depending upon the type of object and the type of engine, the implementer could specialize these 
@@ -267,61 +152,7 @@ Matrix -down[hidden]- CollisionFactory
       class composed of a Shape. This helps determine the type of object which is written in the AnyFile and also 
       allows support for changing the shapes in Scene edit mode.
       </p>
-      {% plantuml %}
-class PropertyChain {
-    PropertyChain *next = nullptr
-    --
-    friend class Iterator<PropertyChain>
-    void addProperty(PropertyChain *n)
-}
-
-class AShape {
-    shared_ptr<Shape> m_shape
-    GuiDropDownList *m_shapeDropDownList
-    String m_anySpec
-    --
-    explicit AShape(const Any &)
-    AShape &operator=(const Any &)
-    Any toAny() const
-}
-
-class Solid {
-    float m_rollingFriction = 0.3
-    bool m_phased = false
-    --
-    explicit Solid(const Any &any)
-    Solid &operator=(const Any &a)
-    Any toAny() const;
-}
-PropertyChain <|-- AShape
-PropertyChain <|-- Solid
-
-class GhostEntity {
-    void init(AnyTableReader &propertyTable)
-    ..
-    AShape ashape
-    if (propertyTable.getIfPresent("ashape", ashape))
-    \tthis->addProperty(new AShape(ashape))
-    --
-    virtual Any toAny(const bool forceAll)
-}
-
-class PhysicsEntity {
-    void init(AnyTableReader &propertyTable)
-    ..
-    AShape ashape
-    if (propertyTable.getIfPresent("ashape", ashape))
-    \tthis->addProperty(new AShape(ashape))
-    Solid solid
-    if (propertyTable.getIfPresent("solid", solid))
-    \tthis->addProperty(new Solid(solid))
-    --
-    virtual Any toAny(const bool forceAll)
-}
-
-PropertyChain <|-- GhostEntity
-PropertyChain <|-- PhysicsEntity
-      {% endplantuml %}
+      <object data="/uml/5f75da5d1c7a0e8b0943e17c7c0c810c.svg" type="image/svg+xml" class="plantuml"></object>
       <p> 
       Similarly, the Rigid objects have certain parameters like rolling friction and angular velocity, etc. Another object must 
       be included to set these parameters. Luckily, the Entity object already contained some parameters like mass and frame 
@@ -339,42 +170,7 @@ PropertyChain <|-- PhysicsEntity
       to edit parameters via a GUI and then exporting the scene is a better way. It is one of the key features of a fully-fledged
       game engine and reduces development time. 
       </p>
-      {% plantuml %}
-class AShape {
-    -String m_anySpec
-    --
-    shapeSetterCallBack()
-    ..
-    auto any = Any::parse(m_anySpec)
-    assignShape(any)
-    --
-    virtual makeGUI(class GuiPane *pane, class GApp *app)
-    ..
-    auto any = toAny()
-    m_anySpec = any.unparse()
-    multiLineTextBox = pane->addMultiLineTextBox("Any Spec", &m_anySpec)
-    pane->addButton("Apply",
-    \tGuiControl::Callback(this, &AShape::shapeSetterCallBack),
-    \tGuiTheme::NORMAL_BUTTON_STYLE)
-}
-
-class PhysicsEntity {
-    virtual makeGUI(class GuiPane *pane, class GApp *app)
-    ..
-    VisibleEntity::makeGUI(pane, app)
-    auto tabPane = pane->addTabPane();
-    for (auto it : properties)
-    \tString property = it->getName()
-    \tauto childPane = tabPane->addTab(property)
-    \tit->makeGUI(childPane, app)
-}
-
-class Solid {
-    virtual makeGUI(GuiPane* pane, GApp* app)
-    ..
-    pane->addNumberBox<float>("rollingFriction", &m_rollingFriction)
-}
-      {% endplantuml %}
+      <object data="/uml/8cfa6bf819f42fa8f725d1a50810ae27.svg" type="image/svg+xml" class="plantuml"></object>
       <h4>More Composition</h4>
       <p>
       Based on the previous work and the design principle of delegating behavior to entities, we can proceed to add more objects 
