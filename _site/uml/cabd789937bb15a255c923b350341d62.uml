@@ -1,8 +1,0 @@
-@startuml
-
-	@startuml
-	class Expression
-	class Value
-	@enduml
-	
-@enduml
