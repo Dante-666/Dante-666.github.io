@@ -3,6 +3,7 @@ layout: portfolio
 title: VR App for Dice simulation
 section: Portfolio
 repo: Dante-666/TrueDice
+gameplay: iMFytRh2yEI
 ---
 <!-- portfolio -->
 <section class="section">
@@ -218,6 +219,26 @@ repo: Dante-666/TrueDice
 	      none of the particle effects can be applied. The choice has to be communicated to all the
 	      active die objects via a weak implementation of the observer pattern.
 	      </p>
+	      <div class="row shuffle-wrapper">
+		<div class="col-lg-4 col-6 mb-4 shuffle-item">
+	          <div class="position-relative rounded hover-wrapper">
+		    <img src="assets/images/portfolio/truedice/menu_credits.png" alt="Credits"
+		    class="img-fluid rounded w-100 d-block">
+		  </div>
+	        </div>
+		<div class="col-lg-4 col-6 mb-4 shuffle-item">
+	          <div class="position-relative rounded hover-wrapper">
+		    <img src="assets/images/portfolio/truedice/menu_main.png" alt="Credits"
+		    class="img-fluid rounded w-100 d-block">
+		  </div>
+	        </div>
+		<div class="col-lg-4 col-6 mb-4 shuffle-item">
+	          <div class="position-relative rounded hover-wrapper">
+		    <img src="assets/images/portfolio/truedice/menu_usage.png" alt="Credits"
+		    class="img-fluid rounded w-100 d-block">
+		  </div>
+	        </div>
+	      </div>
 	    </section>
 	  </li>
 	</ul>
@@ -313,9 +334,15 @@ repo: Dante-666/TrueDice
 	runs this one and I've created some action sequence in which the Sprite is faded-in, faded-out and then a callback
 	to pop the current scene is called which runs the original game scene.</p>
 	<h4>Valgrind</h4>
-	<p>Check for leaks###############</p>
+	<p>I am doing some insertions and deletions of objects in the main loop and I was worried about memory leaks. To be
+	more confident, I ran a basic check to detect leaks and found some related to Label creation my game
+	code. There were a lot more problems, especially related to fmod and AudioEngine but they were inherent to the 
+	Game Engine and I wanted to fix everything but that should go as pull requests to the game engine repo.</p>
 	<h4>Gameplay</h4>
-	<p>ADDVIDEO</p>
+	<p>I recorded an early version which still is a little bit buggy but demonstrates the usage. This looks really
+	weird because the dice are moving around vigorously when I am shaking it a lot but the screen is static. The
+	best feel for this can be obtained by downloading the app by the QR code provided at the top of the home page.</p>
+	{% include youtube.html id=page.gameplay %}
       </section>
     </div>
     <div class="row">
