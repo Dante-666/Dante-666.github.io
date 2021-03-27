@@ -1,0 +1,51 @@
+@startuml
+
+	abstract class Expression {
+}
+class Value {
+-int value
+}
+class Addition {
+-Expression& lhs
+-Expression& lhs
+}
+class Multiplication {
+-Expression& lhs
+-Expression& lhs
+}
+Expression <|-- Value
+Expression <|-- Addition
+Expression <|-- Multiplication
+
+abstract class Visitor {
++ {abstract} visit(Expression& expr)
+}
+
+class Printer {
+-stringstream oss
+--
++ visit(Expression& expr)
+if (auto de = dynamic_cast<Value&>(e))
+\toss << de.value
+else if (auto ae = dynamic_cast<Addition&>(e))
+\toss << "("
+\tvisit(ae.left)
+\toss << "+"
+\tvisit(ae.right)
+\toss << ")"
+els if...
+}
+
+class Evaluator {
+-int total
++ visit(Expression& expr)
+}
+
+Visitor <|-- Printer
+Visitor <|-- Evaluator
+
+Multiplication <|.. Printer
+Addition <|.. Printer
+Value <|.. Printer
+	
+@enduml

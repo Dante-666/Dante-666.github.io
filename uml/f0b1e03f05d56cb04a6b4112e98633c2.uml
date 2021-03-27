@@ -1,0 +1,24 @@
+@startuml
+
+abstract class Expression {
+abstact print(Expression&) = 0
+}
+class Value {
+-int value
+print(Expression&)
+}
+class Addition {
+-Expression& lhs
+-Expression& lhs
+print(Expression&)
+}
+class Multiplication{
+-Expression& lhs
+-Expression& lhs
+print(Expression&)
+}
+
+Expression <|-- Value
+Expression <|-- Addition
+	
+@enduml

@@ -1,0 +1,210 @@
+---
+layout: nospa
+section: Blogs
+title: Non-intrusive and Acyclic Visitor
+repo: Dante-666/TrueDice
+permalink : /blog/:basename
+---
+<!-- portfolio -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <section class="subsection">
+	<h3>The Visitor Pattern</h3>
+	<p> The <a class="text-dark" href="https://refactoring.guru/design-patterns/visitor">Visitor</a>
+	is a behavioral pattern that is used to apply different algorithms to a 
+	<a class="text-dark" href="https://refactoring.guru/design-patterns/composite">Composite</a> 
+	tree structure. It is mainly used to parse the tree in different ways to achieve different
+	outcomes. This is intended to separate the algorithm from the objects that they operate on. It
+	can be implemented in different ways depending upon the design options and choices available
+	at the instance.</p>
+    	{% plantuml %}
+abstract class Expression {
+{abstract} print(Expression&) = 0
+}
+class Value {
+-int value
+print(Expression&)
+}
+class Addition {
+-Expression& lhs
+-Expression& lhs
+print(Expression&)
+}
+class Multiplication{
+-Expression& lhs
+-Expression& lhs
+print(Expression&)
+}
+
+Expression <|-- Value
+Expression <|-- Addition
+Expression <|-- Multiplication
+	{% endplantuml %}
+	<p>The simplest implementation is extremely intrusive in which the base composite
+	classe is modified to have a virtual visit method and the visit behavior is delegated to the
+	subclasses for a particular algorithm, say printing. This is a bad design choice as the composite
+	tree may be parsed in a different manner and not just for printing, and if we stick to this
+	design choice, we would have to modify the composite classes again with virtual methods for
+	different algorithms and this is bad for code maintainence. If we recall, the Visitor was 
+	supposed to separate the algorithm from the objects and it seems like it's not doing its job
+	quite well.</p>
+	{% plantuml %}
+	abstract class Expression {
+}
+class Value {
+-int value
+}
+class Addition {
+-Expression& lhs
+-Expression& lhs
+}
+class Multiplication {
+-Expression& lhs
+-Expression& lhs
+}
+Expression <|-- Value
+Expression <|-- Addition
+Expression <|-- Multiplication
+
+abstract class Visitor {
++ {abstract} visit(Expression& expr)
+}
+
+class Printer {
+-stringstream oss
+--
++ visit(Expression& expr)
+if (auto de = dynamic_cast<Value&>(e))
+\toss << de.value
+else if (auto ae = dynamic_cast<Addition&>(e))
+\tvisit(ae.left)
+\toss << "+"
+\tvisit(ae.right)
+else if...
+}
+
+class Evaluator {
+-int total
++ visit(Expression& expr)
+}
+
+Visitor <|-- Printer
+Visitor <|-- Evaluator
+
+Multiplication <|.. Printer
+Addition <|.. Printer
+Value <|.. Printer
+	{% endplantuml %}
+	<p>The next choice is a reflective visitor which behaves more like a visitor in which
+	the algorithm is separate from the data. But this visitor relies heavily on RTTI and
+	the casts make it a bit slower. In some time-critical parsing applications, this
+	might not be a very good implemetation.
+	</p>
+	<p>Can we do any better? Implementing the visitor for a strongly typed language
+	such as C++ can be tricky. From the UML diagrams, the problem is obvious. The concrete
+	Visitors need to know the basetype of the object to perform different operations.
+	We can't resort to method overloading since it would default to the base composite class.
+	To avoid this problem, we use a 
+	<a class="text-dark" href="https://refactoring.guru/design-patterns/visitor-double-dispatch">
+	double dispatch</a> visitor.
+	</p>
+	{% plantuml %}
+abstract class Expression {
++{abstract} accept(Visitor& visitor)
+}
+class Value {
+-int value
++accept(Visitor& visitor)
+visitor.visit(*this)
+}
+class Addition {
+-Expression& lhs
+-Expression& lhs
++accept(Visitor& visitor)
+}
+class Multiplication {
+-Expression& lhs
+-Expression& lhs
++accept(Visitor& visitor)
+}
+Expression <|-- Value
+Expression <|-- Addition
+Expression <|-- Multiplication
+
+abstract class Visitor {
++ {abstract} visit(Value& expr)
++ {abstract} visit(Addition& add)
++ {abstract} visit(Multiplication& mult)
+}
+
+class Printer {
+-stringstream oss
+--
++ visit(Value& expr)
+\toss << de.value
++ visit(Addition& add)
+\tprint(ae.left)
+\toss << "+"
+\tprint(ae.right)
++ visit(Multiplication& mult)
+\tprint(ae.left)
+\toss << "*"
+\tprint(ae.right)
+}
+
+class Evaluator {
+-int total
++ visit(Value& expr)
++ visit(Addition& add)
++ visit(Multiplication& mult)
+}
+
+Visitor <|-- Printer
+Visitor <|-- Evaluator
+
+Visitor <|.. Expression
+
+Multiplication <|.. Visitor
+Addition <|.. Visitor
+Value <|.. Visitor
+	{% endplantuml %}
+	<p>This beautiful trick uses a conjunction of dynamic binding and method overloading
+	to figure out the type of the composite and then uses this information to call the 
+	appropriate method for the object type.
+	</p>
+	<p>Although neat, it also creates a cyclic dependency between the composite objects
+	and the Visitor objects which could be bad in certain scenarios especially when it
+	comes to code compilation and maintainence. There is a Acyclic Visitor invented
+	by <a class="text-dark" href="https://condor.depaul.edu/dmumaugh/OOT/Design-Principles/acv.pdf">
+	Robert C. Martin</a> which solves this problem but introduces dynamic_cast to the
+	equation which has its own set of problems. It is obvious that the implementation relies
+	heavily on the use case and I will discuss the case where modifying the Composite may not
+	be an option and thus a Non-intrusive visitor is desired. Let's see if we can make it better.
+	</p>
+      </section>
+    </div>
+    <div class="row">
+      <section class="subsection">
+	<h3>Non Intrusion</h3>
+	<p> I've taken the below composite from Dmitri Nesteruk's course 
+	<a class="text-dark" href="https://www.udemy.com/course/patterns-cplusplus/">
+	Design Patterns in Modern C++</a> on Udemy. I've used the same structure for the UMLs above
+	to maintain consistency.
+	</p>
+	{% gist 436b7bc848ce57adaf185c36e6adf682 %}
+      </section>
+    </div>
+    <div class="row">
+      <section>
+	<h3>Future Work</h3>
+	<p> I have built this to simply showcase this as a complete project built from start to finish.
+	If people actually like this and require some new types of dice, then I can think about including
+	those as in-app purchases to get some monetization. I have absolutely no idea on how to integrate
+	the purchases with Google Play Store which would be a good experience in itself.
+	</p>
+      </section>
+    </div>
+  </div>
+</section>
+<!-- /portfolio -->

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="544px" preserveAspectRatio="none" style="width:484px;height:544px;background:#000000;" version="1.1" viewBox="0 0 484 544" width="484px" zoomAndPan="magnify"><defs/><g><rect fill="#030912" height="1" style="stroke:#030912;stroke-width:1.0;" width="1" x="0" y="0"/><text fill="#33FF02" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" lengthAdjust="spacing" textLength="135" x="5" y="17">PlantUML 1.2021.00</text><rect fill="#33FF02" height="21.2969" style="stroke:#33FF02;stroke-width:1.0;" width="472" x="5" y="26.9688"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="470" x="6" y="41.9688">[From f42799551a829fc0be5bf00de86166ec.uml (line 57) ]</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="10" y="62.2656"/><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="79" x="5" y="78.5625">@startuml</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="10" y="94.8594"/><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="173" x="5" y="111.1563">class PropertyChain {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="233" x="25" y="127.4531">PropertyChain *next = nullptr</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="12" x="25" y="143.75">--</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="5" y="160.0469">...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="175" x="5" y="176.3438">... ( skipping 32 lines )</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="5" y="192.6406">...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="296" x="25" y="208.9375">virtual Any toAny(const bool forceAll)</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="10" x="5" y="225.2344">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="10" y="241.5313"/><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="164" x="5" y="257.8281">class PhysicsEntity {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="333" x="25" y="274.125">void init(AnyTableReader &amp;propertyTable)</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="10" x="25" y="290.4219">..</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="122" x="25" y="306.7188">AShape ashape</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="392" x="25" y="323.0156">if (propertyTable.getIfPresent("ashape", ashape))</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="336" x="25" y="339.3125">\tthis-&gt;addProperty(new AShape(ashape))</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="80" x="25" y="355.6094">Solid solid</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="352" x="25" y="371.9063">if (propertyTable.getIfPresent("solid", solid))</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="294" x="25" y="388.2031">\tthis-&gt;addProperty(new Solid(solid))</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="12" x="25" y="404.5">--</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="296" x="25" y="420.7969">virtual Any toAny(const bool forceAll)</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="10" x="5" y="437.0938">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="10" y="453.3906"/><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="243" x="5" y="469.6875">PropertyChain &lt;|-- GhostEntity</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="256" x="5" y="485.9844">PropertyChain &lt;|-- PhysicsEntity</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="0" x="10" y="502.2813"/><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="14" x="5" y="518.5781">@</text><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="106" x="10" y="534.875">Syntax Error?</text><!--MD5=[c14efcde0ecc16ae678d925513bfda87]
+@startuml
+
+class PropertyChain {
+    PropertyChain *next = nullptr
+    - -
+    friend class Iterator<PropertyChain>
+    void addProperty(PropertyChain *n)
+}
+
+class AShape {
+    shared_ptr<Shape> m_shape
+    GuiDropDownList *m_shapeDropDownList
+    String m_anySpec
+    - -
+    explicit AShape(const Any &)
+    AShape &operator=(const Any &)
+    Any toAny() const
+}
+
+class Solid {
+    float m_rollingFriction = 0.3
+    bool m_phased = false
+    - -
+    explicit Solid(const Any &any)
+    Solid &operator=(const Any &a)
+    Any toAny() const;
+}
+PropertyChain <|- - AShape
+PropertyChain <|- - Solid
+
+class GhostEntity {
+    void init(AnyTableReader &propertyTable)
+    ..
+    AShape ashape
+    if (propertyTable.getIfPresent("ashape", ashape))
+    \tthis->addProperty(new AShape(ashape))
+    - -
+    virtual Any toAny(const bool forceAll)
+}
+
+class PhysicsEntity {
+    void init(AnyTableReader &propertyTable)
+    ..
+    AShape ashape
+    if (propertyTable.getIfPresent("ashape", ashape))
+    \tthis->addProperty(new AShape(ashape))
+    Solid solid
+    if (propertyTable.getIfPresent("solid", solid))
+    \tthis->addProperty(new Solid(solid))
+    - -
+    virtual Any toAny(const bool forceAll)
+}
+
+PropertyChain <|- - GhostEntity
+PropertyChain <|- - PhysicsEntity
+
+@
+      
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 15:55:05 IST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: ANSI_X3.4-1968
+Language: en
+Country: US
+--></g></svg>
