@@ -97,11 +97,11 @@ timeline:
 
 # Blog Home Section
 blog-home-items:
-  - image : "assets/images/portfolio/bullet-physics.png"
+  - image : "assets/images/blog/visitor.jpg"
     url: "/blog/non_intrusive_visitor"
 
-  - image : "assets/images/portfolio/true-dice.png"
-    url: "/blog/non_intrusive_visitor"
+  - image : "assets/images/blog/fsm.png"
+    url: "/blog/state_pattern"
 
 #-------------------------------
 # Portfolio (Section and Page)

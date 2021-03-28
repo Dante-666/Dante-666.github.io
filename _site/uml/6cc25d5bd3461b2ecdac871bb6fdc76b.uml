@@ -1,0 +1,74 @@
+@startuml
+
+abstract class Expression {
+}
+class Value {
+-int value
+}
+class Addition {
+-Expression& lhs
+-Expression& lhs
+}
+class Multiplication {
+-Expression& lhs
+-Expression& lhs
+}
+Expression <|-- Value
+Expression <|-- Addition
+Expression <|-- Multiplication
+
+together {
+abstract class Handler {
++ {abstract} handle(Value& expr)
++ {abstract} handle(Addition& add)
++ {abstract} handle(Multiplication& mult)
+}
+
+abstract class Visitor {
+- map<type_index, function<void(Expression &)>> type_map
+--
+- template <typename E> void castAndHandle(Expression &expr)
+..
+//Internal double dispatch
+auto casted = static_cast<T &>(expr);
+handle(casted);
++ void accept(Expression &expr)
+..
+//search type_map and call the specialized castAndHandle(Expression&)
+}
+}
+
+class Printer {
+-stringstream oss
+--
++ handle(Value& expr)
+\toss << de.value
++ handle(Addition& add)
+\toss << "("
+\tprint(ae.left)
+\toss << "+"
+\tprint(ae.right)
+\toss << ")"
++ handle(Multiplication& mult)
+\tprint(ae.left)
+\toss << "*"
+\tprint(ae.right)
+}
+
+class Evaluator {
+-int total
++ handle(Value& expr)
++ handle(Addition& add)
++ handle(Multiplication& mult)
+}
+
+Visitor -[hidden] Handler
+Handler <|-- Visitor
+Visitor <|-- Printer
+Visitor <|-- Evaluator
+
+Multiplication <|.. Visitor
+Addition <|.. Visitor
+Value <|.. Visitor
+	
+@enduml
