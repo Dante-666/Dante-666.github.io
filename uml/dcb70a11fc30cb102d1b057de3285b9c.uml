@@ -1,0 +1,21 @@
+@startuml
+
+class State {
++ State* onTrigger(Trigger* trig)
+}
+
+class Trigger {
+-map<State*, pair<Transition*, State*>> fromTo;
++ State* transitionTo(State* from)
++ registerTrans(State* from, Transition* trans, State* to)
+}
+
+class Transition {
++ void (*callback)(void)
++ Transition(void (*cb)(void))
+}
+
+Trigger o-- State
+Trigger o-- Transition
+	
+@enduml
