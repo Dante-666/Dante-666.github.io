@@ -35,6 +35,23 @@
 	  {% endif %}
       </div>
     </div>
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-8">
+	<ul>
+	  {% for item in timeline.items %}
+	  <li>
+	  <section>
+	    <h4 class="mb-0 text-light center">{{ item.text }}</h4>
+	  </section>
+	  </li>
+	  {% endfor %}
+	</ul>
+      </div>
+      <div class="col-2">
+      </div>
+    </div>
     {% endfor %}
   </div>
 </section>
