@@ -17,7 +17,6 @@ menu:
 - {name: Portfolio, link: '#portfolio'}
 - {name: Contact, link: '#contact'}
 
-
 #-------------------------------
 # Google Analytics Section
 
@@ -25,7 +24,6 @@ menu:
 # Learn more at: http://support.google.com/analytics/answer/1008065
 
 google-analytics: G-MM2F5FN4DZ
-
 
 #-------------------------------
 # Comment Section (Disqus)
@@ -42,7 +40,6 @@ social:
 - {icon: "ti-instagram", link: "#"}
 - {icon: "ti-dribbble", link: "#"}
 - {icon: "ti-twitter", link: "#"}
-
 
 #-------------------------------
 # About (Section and Page)
@@ -61,36 +58,83 @@ skills:
 - {name: After Effects, color: '#bdecf6', value: '80%'}
 - {name: Web App, color: '#ffbcaa', value: '70%'}
 
-
-
 #-------------------------------
 # Timeline Section
 
 timeline-title: Timeline
 timeline:
-- {name: Bachelor of Technology, 
-   date: 'July 2008- June 2012',
-   organization: 'National Institute of Technology, Warangal',
-   type: 'ed'
-  }
-- {name: Software Engineer, 
-   icon: 'icon-2.png', 
-   date: 'June 2012 - Oct 2015', 
-   organization: 'CA Technologies',
-   type: 'work'
-  }
-- {name: Master of Science(By Research), 
-   date: 'July 2016 - June 2019', 
-   organization: 'Indian Institute of Technology, Kanpur',
-   type: 'ed'
-  }
-- {name: Software Engineer, 
-   icon: 'icon-3.png', 
-   date: 'July 2019 - Present', 
-   organization: 'Mathworks',
-   type: 'work'
-  }
-
+  -
+    date: "July 2008- June 2012"
+    items:
+      -
+        text: "Obtained A+ grades in Data structures and Algorithmsi."
+      -
+        text: "Gained 3rd position in Game Design competition."
+      -
+        text: "Underwent training program at BSNL."
+    name: "Bachelor of Technology"
+    organization: "National Institute of Technology, Warangal"
+    type: ed
+  -
+    date: "June 2012 - Oct 2015"
+    items:
+      -
+        text: "Worked on an Enterprise Storage Management software, CA SRM."
+      -
+        text: "Roles included system administration for storage hardware, writing automation testbeds."
+      -
+        text: "Was part of an Event Management Team to handle and coordinate Team outings. Eventually led the team briefly."
+      -
+        text: "Completed OCA, Java SE 7 Certification."
+      -
+        text: "Switched internally to work with CA SiteMinder, an enterprise Security and SSO solution."
+      -
+        text: "Learnt software debugging and various technologies as LDAP, Kerberos, REST. Fixed low priority bugs."
+    name: "Software Engineer"
+    organization: "CA(India) Technologies Pvt. Ltd."
+    type: 'work'
+  -
+    date: "July 2016 - June 2019"
+    items:
+      -
+        text: "Cleared GATE with a rank of 802, 99.99% numer of candidates."
+      -
+        text: "Coursework: Probabilistic Mobile Robotics, Signal Processing, Image Processing, Mathematical methods and Modelling"
+      -
+        text: "Joined Team IITK-TCS for Amazon Robotics Challenge 2017. Roles included programming low and high level image processing, networking, load balancing and reducing latency. Won 3rd, 4th and 5th prizes in the event which took place in Robocup 2017, Nagoya, Japan. Add video below"
+      -
+        text: "Worked on extracting depth information from Light-field data using a simulated annealing algorithm."
+      -
+        text: "Used Light-field digital refocussing algorithm to patent a novel orthographic imaging algorithm."
+      -
+        text: "Developed a portable version of a device capable of counting 200 micron steel sheets with an accuracy of 99.6%."
+      -
+        text: "Developed physical hardware for a Light-Field capture system for capturing images across a plane."
+      -
+        text: "Demonstrated the generalized abilty of orthographic capture using the patented algorithm to count straws(simulating hard to move steel rebars)."
+    name: "Master of Science(By Research)"
+    organization: "Indian Institute of Technology, Kanpur"
+    type: ed
+  -
+    date: "July 2019 - Present"
+    items:
+      -
+        text: "Provided Technical Support to customers by direct engagement which helped in understanding requirements."
+      -
+        text: "Working on Embedded Coder Toolbox for Simulink, used to generate C/C++ code from graphical models."
+      -
+        text: "I own the parameter binding phase of the in-house compiler, fixing bugs in this module and increase the scope for correct code generation."
+      -
+        text: "Improved the code generation infrastructure by modelling Simulink semantics better in the intermediate representation."
+      -
+        text: "The work improved code robustness and preemptively handled customer bugs."
+      -
+        text: "It also enhanced code quality, such as const qualifying read-only parameters."
+      -
+        text: "Continuing my efforts for better and correct representation of Simulink semantics for backend code generation."
+    name: "Software Engineer"
+    organization: "MathWorks India Pvt. Ltd."
+    type: work
 
 #-------------------------------
 # Blog (Section and Page)
