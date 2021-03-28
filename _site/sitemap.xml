@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>/blog/blog_template</loc>
+</url>
+<url>
 <loc>/pf/bullet-physics</loc>
 </url>
 <url>
@@ -8,6 +11,9 @@
 </url>
 <url>
 <loc>/blog/non_intrusive_visitor</loc>
+</url>
+<url>
+<loc>/blog/state_pattern</loc>
 </url>
 <url>
 <loc>/pf/true-dice</loc>
