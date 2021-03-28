@@ -1,0 +1,41 @@
+@startuml
+
+abstract class DoorState {
++ {abstract} DoorState *open()
++ {abstract} DoorState *close()
++ {abstract} DoorState *ulock()
+}
+
+class OpenState {
++ DoorState *open()
++ DoorState *close()
++ DoorState *ulock()
+}
+
+class CloseState {
++ DoorState *open()
++ DoorState *close()
++ DoorState *ulock()
+}
+
+class LockedState {
++ DoorState *open()
++ DoorState *close()
++ DoorState *ulock()
+}
+
+DoorState <|-- OpenState
+DoorState <|-- CloseState
+DoorState <|-- LockedState
+
+class Door {
+- DoorState *_currState
++ Door() 
++ open() { _currState = _currState->open() }
++ close() { _currState = _currState->close() }
++ ulock() { _currState = _currState->ulock() }
+}
+
+Door o-- DoorState
+	
+@enduml

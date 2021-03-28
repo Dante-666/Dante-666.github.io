@@ -1,0 +1,48 @@
+@startuml
+
+<style>
+stateDiagram {
+  FontColor #8b949e
+  arrow {
+    FontSize 13
+  }
+}
+</style>
+state L
+state V1
+state V2
+state V3
+state V4
+state V5
+state O
+
+state IV1
+state IV2
+state IV3
+state IV4
+state IV5
+state E
+
+L -> V1 : "4": 4
+V1 -> V2 : "2": 42
+V2 -> V3 : "6": 426
+V3 -> V4 : "7": 4267
+V4 -> V5 : "8": 42678
+V5 -> O : "9": OPENED
+O -> L : "666": LOCKED
+O -> O : "x": OPENED
+
+L --> IV1 : "x": x
+IV1 -> IV2 : "x": xx
+V1 --> IV2 : "x": xx
+IV2 -> IV3 : "x": xxx
+V2 --> IV3 : "x" : xxx
+IV3 -> IV4 : "x": xxxx
+V3 --> IV4 : "x": xxxx
+IV4 -> IV5 : "x": xxxxx
+V4 --> IV5 : "x": xxxxx
+IV5 -> E : "x": ERROR
+E -down-> V1 : "4": 4
+E -down-> IV1 : "x": x
+	
+@enduml
