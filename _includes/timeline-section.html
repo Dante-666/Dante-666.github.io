@@ -8,7 +8,7 @@
       </div>
     </div>
     {% for timeline in site.data.settings.timeline %}
-    <div class="row">
+    <div class="row" style="margin-bottom:2rem">
       <div class="col-2">
 	{% if timeline.type == "ed" %}
 	<img src="assets/images/icons/grad_hat.png" class="rounded-circle icon-bg dshadow">
@@ -35,21 +35,24 @@
 	  {% endif %}
       </div>
     </div>
-    <div class="row">
-      <div class="col-2">
+    <div class="row" style="margin-bottom:2rem">
+      <div class="col-1">
       </div>
-      <div class="col-8">
-	<ul>
-	  {% for item in timeline.items %}
-	  <li>
-	  <section>
-	    <h4 class="mb-0 text-light center">{{ item.text }}</h4>
-	  </section>
-	  </li>
-	  {% endfor %}
-	</ul>
-      </div>
-      <div class="col-2">
+      <div class="col-11">
+	{% for item in timeline.items %}
+	<div class="row">
+	{% if item.text %}
+	<div class="col-0.5">
+	  <h4 class="text-light"><i class="ti-arrow-circle-right"></i></h4>
+	</div>
+	<div class="col-11">
+	  <h4 class="text-light center font-secondary">{{ item.text }}</h4>
+	</div>
+	{% elsif item.video %}
+	{% include youtube.html id=item.video %}
+	{% endif %}
+	</div>
+	{% endfor %}
       </div>
     </div>
     {% endfor %}
