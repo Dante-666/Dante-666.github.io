@@ -76,27 +76,29 @@ timeline:
     date: "July 2008- June 2012"
     items:
       -
-        text: "Obtained A+ grades in Data structures and Algorithms."
+        text: "Coursework: Data structures and Algorithms, Object Oriented Programming, Operating Systems, Microprocessor Systems, Computer Architecture, Computer Networks."
       -
-        text: "Gained 3rd position in Game Design competition@SpringSpree."
+        text: "Obtained 3rd position in Game Design competition@SpringSpree."
     name: "Bachelor of Technology"
     organization: "National Institute of Technology, Warangal"
-    type: 'work'
+    type: 'ed'
   -
     date: "June 2012 - Oct 2015"
     items:
       -
         text: "Worked on an Enterprise Storage Management software, CA SRM."
       -
-        text: "Roles included system administration for storage hardware, writing automation testbeds."
+        text: "Roles included system administration for storage hardware, Operating Systems, and Relational Databases."
       -
-        text: "Was part of an Event Management Team to handle and coordinate Team outings. Eventually led the team briefly."
+        text: "Was part of an Event Management Team to handle and coordinate Team outings for the entire Business Unit. Eventually led the team briefly."
       -
         text: "Completed OCA, Java SE 7 Certification."
       -
         text: "Worked on CA SiteMinder, an Enterprise Security and SSO solution."
       -
-        text: "Learnt debugging and various technologies as LDAP, Kerberos, REST. Fixed low priority bugs."
+        text: "Came across various technologies like LDAP, Kerberos, REST."
+      -
+        text: "Honed my debugging skills by working on bugs."
     name: "Software Engineer"
     organization: "CA(India) Technologies Pvt. Ltd."
     type: 'work'
@@ -104,41 +106,42 @@ timeline:
     date: "July 2016 - June 2019"
     items:
       -
-        text: "Cleared GATE-2016 with a rank of 810. 99.47 percentile(Total number of candidates, 152318)."
+        text: "Cleared GATE-2016 with a rank of 810/152318(99.47 percentile)."
+
       -
         text: "Coursework: Probabilistic Mobile Robotics, Signal Processing, Image Processing, Mathematical methods and Modelling."
       -
-        text: "Joined Team IITK-TCS for Amazon Robotics Challenge 2017. Roles included programming low and high level image processing, load balancing and reducing latency. Won 3rd, 4th and 5th prizes in the event which took place in Robocup 2017, Nagoya, Japan."
+        text: "Joined Team IITK-TCS for Amazon Robotics Challenge 2017. Roles included programming low and high-level image processing, load balancing, and reducing latency. Won 3rd, 4th and 5th prizes in the event in Robocup 2017, Nagoya, Japan."
       -
         video: Bqm2uMTF9ig
       -
         text: "Worked on extracting depth information from Light-field data using a simulated annealing algorithm."
       -
-        text: "Used Light-field digital refocussing algorithm to patent a novel orthographic imaging algorithm."
+        text: "Used a Light-field digital refocusing algorithm to patent a novel orthographic imaging algorithm."
       -
-        text: "Developed a portable version of a device capable of counting 200 micron steel sheets with an accuracy of 99.6% using aforementioned algorithm."
+        text: "Developed a portable version of a device capable of counting 200-micron steel sheets with an accuracy of 99.6% using the algorithm mentioned above."
       -
         text: "Developed physical hardware for a Light-Field capture system for capturing images across a plane."
       -
-        text: "Demonstrated the generalized abilty of orthographic capture using the patented algorithm to count straws(simulating hard to move steel rebars)."
+        text: "Demonstrated orthographic capture's generalized ability using the patented algorithm to count bundled straws with occlusions. The technique is one of the ways to count heavy objects like steel rebars/pipes."
     name: "Master of Science(By Research)"
     organization: "Indian Institute of Technology, Kanpur"
-    type: 'work'
+    type: 'ed'
   -
     date: "July 2019 - Present"
     items:
       -
-        text: "Provided Technical Support to customers by direct engagement which helped in understanding requirements."
+        text: "Provided Technical Support to customers by directly engaging them to gain a clear understanding of requirements."
       -
         text: "Working on Embedded Coder Toolbox for Simulink, used to generate C/C++ code from graphical models."
       -
         text: "Improved runtime of generated code for imrotate/imwarp/imcrop by as much as 3.5 times(comparable to OpenCV)."
       -
-        text: "I own the parameter binding phase of the in-house compiler, fixing bugs in this module and increase the scope for correct code generation."
+        text: "I own the in-house compiler's parameter binding phase, fixing bugs in this module and increasing the scope for correct code generation."
       -
-        text: "Improved the code generation infrastructure by modelling multiple Simulink semantics correctly in the intermediate representation."
+        text: "I improved the code generation infrastructure by modeling multiple Simulink semantics correctly in the intermediate representation, enabling correct code generation."
       -
-        text: "The work improved code robustness and preemptively handled customer bugs while enhancing code quality."
+        text: "The work also improved code robustness and preemptively handled customer bugs while enhancing code quality."
     name: "Software Engineer"
     organization: "MathWorks India Pvt. Ltd."
     type: work
