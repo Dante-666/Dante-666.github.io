@@ -90,6 +90,7 @@ function drawWordCloud()
 		    "valgrind": 3,
 		    "C++14": 3,
 		    "OpenCV": 2,
+		    "UML": 2,
 		    "bulletphysics": 2,
 		    "PhysX": 2,
 		    "boost": 2,
