@@ -283,8 +283,17 @@ permalink : /pf/:basename
 	Cocos2dx is an event-based game engine and allows users to set callbacks in response to certain events.
 	Every expected event must be registered with a callback function which tells it exactly what to do. For the
 	acceleration events, I used the gravity to set the physics world gravity and the linear acceleration to apply
-	an impulse force to all the dice present in the scene. This worked out well but in instances where the force
-	of gravity and the linear acceleration add up, it misbehaves and the fix will be discussed in later sections.
+	an impulse force to all the dice present in the scene. This worked out well but in instances where the force 
+	of gravity and the linear acceleration add up. Even minute movements in that direction would over-accelerate 
+	the die, and it looked highly unnatural.
+	</p>
+	<img src="/assets/images/portfolio/truedice/plot.png" alt="Exponential Downweighing" 
+	class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
+	<p>
+	$$y = \beta x^3; \beta = y/x^3; \beta = 1/x^2 \mid y = x;$$ 
+	I weighed the linear acceleration component down using an exponential curve to avoid extreme behavior and 
+	put an upper limit to the maximum acceleration. The raw exponential curve had a very flat slope for lower 
+	values of acceleration magnitude. I settled on using a cubic polynomial which gave the best effect.
 	</p>
 	<h4>Collisions</h4>
 	<p>Now that we have forces enabled, the next best thing is to add collision detection. There are two types
@@ -314,9 +323,13 @@ permalink : /pf/:basename
 	The effects are stored in a text file and it is parsed to create an AST. Reading everything and trying to
 	understand was going to get me nowhere with this. So, I tweaked some parameters until it made sense and doing it
 	one at a time was incredibly helpful. I was able to convert the original explosion effect which had directional 
-	gravity to a radial direction. For the lightning, there was some smoke effect which I didn't need. I just had to
-	reduce the total amount of particle effects that can be attached to one node as having too many dice in the scene
-	just slowed everything down and saturated the screen with lights.
+	gravity to a radial direction. For the lightning, there was some smoke effect which I didn't need.
+	</p>
+	<p> Every collision attached a new particle effect, and processing everything adds a lot of lag to the system. 
+	At first, I avoided this by limiting the number of particle effects attached to the dice. It worked okay, but 
+	when many collisions happen at once, it reaches the limit too fast. When further collisions happen, it will 
+	look like the dice are not reacting at all. To fix this, I kept a pointer to the last event and attached a 
+	newer event if a specific time had elapsed.
 	</p>
       </section>
     </div>
@@ -340,9 +353,12 @@ permalink : /pf/:basename
 	code. There were a lot more problems, especially related to fmod and AudioEngine but they were inherent to the 
 	Game Engine and I wanted to fix everything but that should go as pull requests to the game engine repo.</p>
 	<h4>Gameplay</h4>
-	<p>I recorded an early version which still is a little bit buggy but demonstrates the usage. This looks really
-	weird because the dice are moving around vigorously when I am shaking it a lot but the screen is static. The
-	best feel for this can be obtained by downloading the app by the QR code provided at the top of the home page.</p>
+	<p>I recorded an early version which still is a little bit buggy but demonstrates the usage.Eventually, I 
+	managed to create something cool and lame at the same time. I wanted to keep it simple and for all ages 
+	because of the legalities associated with uploading the app on the Play Store. In this project, I didn't 
+	exercise too many design patterns because it wasn't worth it. This app/game has a straightforward use case, 
+	and it serves the purpose well enough. In upcoming projects, I will showcase those concepts more.
+	</p>
 	{% include youtube.html id=page.gameplay %}
       </section>
     </div>
