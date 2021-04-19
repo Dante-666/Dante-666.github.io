@@ -157,6 +157,9 @@ blog-home-items:
   - image : "assets/images/blog/fsm.png"
     url: "/blog/state_pattern"
 
+  - image : "assets/images/blog/navmesh.png"
+    url: "/blog/navmesh_animation"
+
 #-------------------------------
 # Portfolio (Section and Page)
 
