@@ -1,0 +1,93 @@
+---
+layout: nospa
+section: Blogs
+title: Adding NavMesh, Agents and Animation in Cocos2d-x
+permalink : /blog/:basename
+---
+<!-- blog -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <section class="subsection">
+	<h3>NavMesh</h3>
+	<p>
+	What is a NavMesh? It is short for Navigation Mesh and is the underlying data structure for path queries.
+	<a class="text-dark" href="https://en.wikipedia.org/wiki/Navigation_mesh" target="_blank">Wikipedia</a> defines it better,
+	<pre class="text-dark">
+A navigation mesh is a collection of two-dimensional convex polygons (a polygon mesh) that define which areas of an environment 
+are traversable by agents. In other words, a character in a game could freely walk around within these areas unobstructed by trees,
+lava, or other barriers that are part of the environment. Adjacent polygons are connected in a graph.
+
+Path-finding within one of these polygons can be done trivially in a straight line because the polygon is convex and traversable.
+Path-finding between polygons in the mesh can be done with one of the large numbers of graph search algorithms, such as A*. Agents
+on a navmesh can thus avoid computationally expensive collision detection checks with obstacles that are part of the environment.
+	</pre>
+	</p>
+	<p>
+	Many game engines support this for AI path-finding and to accomplish point-and-click movements in a strategy game. 
+	It naturally supports the idea of obstacles and non-traversable or differently traversable areas. We can construct the 
+	NavMesh by parsing the terrain geometry guided by parameters. Agents navigate the NavMesh constrained by their own set 
+	of parameters like velocity, acceleration, etc.
+	</p>
+      </section>
+    </div>
+    <div class="row">
+      <section class="subsection">
+	<h3>Cocos2d-x and recast</h3>
+	<p>
+	Cocos2d-x supports NavMesh and Agents, but I couldn't find and easy-to-follow documentation for beginners. The source code 
+	has samples that show a use case of these objects. The NavMesh class encapsules the Detour objects and expects a baked 
+	NavMesh in binary format along with a geometry file. Cocos2d-x lists 
+	<a class="text-dark" href="https://github.com/recastnavigation/recastnavigation" target="_blank">recastnavigation</a> as an external 
+	dependency accompanied by Detour for path-finding. We can see the expected header definition for the binary input 
+	in the mesh construction methods. Now, I just had to mimic/find the serialization in recast.
+	</p>
+	{% gist 4aac4e1080e79b062beec1b2d0d5a607 %}
+	<p>Luckily, Recast has a demo sample built on SDL, which offers a friendly GUI for Mesh construction and visualization. 
+	The Rasterization parameter influences the size of generated tiles as it influences the generation of voxels used to build 
+	the NavMesh. Agent Radius controls the boundary of the mesh, and Max Slope limits steep geometry. Users can also control 
+	the number of output tiles.
+	'Temp Obstacles' generates multiple tiled meshes and writes out the cocos-compatible all_tiles_tilecache.bin file on saving. 
+	Pressing the '9' key writes out the geometry file as %meshname%.gset. The file contains Off-Mesh links, which connect two 
+	disjoint NavMesh polygons or shortens an otherwise longer path. We use Off-Mesh links for a variety of effects, such as 
+	jumping and swimming. Configuring agents with a specific type can filter some entities while allowing others via the link. 
+	For example, only after learning the swimming skill, the player can cross the river and explore other islands.
+	</p>
+	<img src="/assets/images/blog/navmesh_animation/tile_mesh.png" alt="TileMesh" 
+	class="img-fluid rounded d-block" style="margin-bottom:3rem;margin-top:3rem">
+	<p> The current workflow only supports non-dynamic meshes. We can make it dynamic with recast objects for a much larger 
+	open-world project like Gothic or Skyrim. Another strategy could be to use a TileManger object with a limited number of 
+	tiles around the player node, and as we move, we swap in new tiles for old ones and activate-deactivate AI agents. I will
+	use this to build a basic RPG, a portfolio item focusing more on character design and mechanics. NavMesh optimization is 
+	not the focus area(at least for now).
+	</p>
+	{% gist 6681733d1eeb1a7d780ee4fec945d844 %}
+	<p> The mesh can then be inserted into the game using a few lines of code. Scene object stores an internal pointer for 
+	the NavMesh, and the game loop is rigged to support locomotion. NavMeshAgent class wraps a dtCrowdAgent as a Component
+	that can be added to a Node. It is parameterized to move with a certain velocity and acceleration and have an avoidance 
+	radius. If the acceleration value is low in some proportion to the velocity parameter with the custom implementation, the 
+	agent exhibits damped oscillations.
+	</p>
+	{% gist 2dff91d78d80ac6cad793d0fb3efc27f %}
+	<p>
+	The RPG is mobile-based with the basic idea of a company of characters around a player unit. Characters are typical 
+	RPG with different stats and leveling up schemes. The player's level determines the size of its company. Touch inputs move
+	the company around in search of enemy companies to conquer and level up.
+	</p>
+	<p>To support the primary player interaction, one has to figure out the 3D coordinates of the screen-space point. 
+	Unprojecting the homogenized coordinate and casting a ray from the camera's position to the unprojected point gives
+	us the required coordinate on terrain geometry. I used the physics engine for raycasting, and the hit-result is
+	used to navigate a solo agent.
+	</p>
+      </section>
+    </div>
+    <div class="row">
+      <section class="subsection">
+	<h3>Animations</h3>
+	<p>In progress, getting fbx-conv to work.
+	</p>
+      </section>
+    </div>
+  </div>
+</section>
+<!-- blog -->
