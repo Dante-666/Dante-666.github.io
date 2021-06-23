@@ -9,28 +9,24 @@ permalink : /pf/:basename
 <!-- portfolio -->
 <section class="section">
   <div class="container">
-    <div class ="row">
-      <!--div class="col-lg-4 col-sm-6 mb-4" style="margin:auto">
-	<article class="card shadow">
-	  <div class="card-body">
-	    <img src="/assets/images/portfolio/truedice/qr.png" alt="QR Code" class="img-fluid rounded d-block" 
-	    style="margin-bottom:1rem;margin-top:1rem;height:20rem;width:20rem">
-	  </div>
-	</article>
-      </div-->
-      <div class="col-lg-4 col-sm-6 mb-4" style="margin:auto">
-	<article class="card shadow">
+    <div class="card col-md-6 center">
+      <div class="row">
+	<div class="col-md-8">
+	  <img src="/assets/images/portfolio/truedice/qr.png" alt="QR Code" class="img-fluid rounded d-block" 
+	  style="margin-bottom:1rem;margin-top:1rem;height:20rem;width:20rem">
+	</div>
+	<div class="col-md-4">
 	  <div class="card-body">
 	    {% for repository in site.github.public_repositories %}
 	    {% if repository.full_name == page.repo %}
-	    <h4 class="card-title">
+	    <h4 class="card-title"> 
 	      <a class="text-dark" href="{{ repository.html_url }}">{{repository.name}}</a>
 	    </h4>
 	    <p class="card-text">{{ repository.description }}</p>
 	    {% endif %}
 	    {% endfor %}
 	  </div>
-	</article>
+	</div>
       </div>
     </div>
     <div class="row">
