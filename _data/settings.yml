@@ -128,12 +128,8 @@ timeline:
     organization: "Indian Institute of Technology, Kanpur"
     type: 'ed'
   -
-    date: "July 2019 - Present"
+    date: "July 2019 - June 2021"
     items:
-      -
-        text: "Provided Technical Support to customers by directly engaging them to gain a clear understanding of requirements."
-      -
-        text: "Working on Embedded Coder Toolbox for Simulink, used to generate C/C++ code from graphical models."
       -
         text: "Improved runtime of generated code for imrotate/imwarp/imcrop by as much as 3.5 times(comparable to OpenCV)."
       -
@@ -142,8 +138,16 @@ timeline:
         text: "I improved the code generation infrastructure by modeling multiple Simulink semantics correctly in the intermediate representation, enabling correct code generation."
       -
         text: "The work also improved code robustness and preemptively handled customer bugs while enhancing code quality."
-    name: "Software Engineer"
+    name: "Senior Software Engineer"
     organization: "MathWorks India Pvt. Ltd."
+    type: work
+  -
+    date: "June 2021 - Present"
+    items:
+      -
+        text: "Working on Adobe Illustrator."
+    name: "Computer Scientist - I"
+    organization: "Adobe Systems India Pvt. Ltd."
     type: work
 
 #-------------------------------
